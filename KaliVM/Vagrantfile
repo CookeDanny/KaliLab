@@ -1,0 +1,23 @@
+
+# Author: Ryan Estes
+# Created: 9/1/2017
+# Last Revised: 9/29/2017
+# File Name: Vagrantfile
+#
+# Description:
+# 	'Vagrantfile' is a manadatory file for Vagrant to describe the type of machine required for a project,
+# 	and how to configure and provision these machines.
+
+Vagrant.configure("2") do |config|
+	config.vm.box = "Sliim/kali-2018.1-amd64"
+  	config.vm.box_version = "1"
+	config.ssh.username = "root"
+	config.ssh.password = "toor"
+
+	config.vm.provider "virtualbox" do |vb|
+		vb.gui = true
+		vb.name = "Kali"
+		vb.memory = 2048
+		vb.cpus = 2
+	end
+end
